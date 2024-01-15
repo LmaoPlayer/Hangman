@@ -14,9 +14,10 @@ namespace Les2AO
     public partial class Form1 : Form
     {
         //maakt de afbeeldingen aan
-        string[] afbeeldingen = { "G0.jpg", "G1.jpg", "G2.jpg", "G3.jpg", "G4.jpg", "G5.jpg", "G6.jpg", "G7.jpg", "G8.jpg", "G9.jpg", "G10.jpg"};
+        string[] afbeeldingen = { "G0.jpg", "G1.jpg", "G2.jpg", "G3.jpg", "G4.jpg", "G5.jpg", "G6.jpg", "G7.jpg", "G8.jpg", "G9.jpg", "G10.jpg" };
         int huidigeAfbeelding = 0;
         string[] guessedLettersTotal = { " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " " };
+        string[] alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
         string[] WordList = {
             "apple",
             "banana",
@@ -39,6 +40,8 @@ namespace Les2AO
             "sunset",
             "tiger"
         };
+        List<char> charList = new List<char>();
+
         public void resetTheList()
         {
 
@@ -53,8 +56,14 @@ namespace Les2AO
                 LenChosenOne[i] = "_";
             }
             label1.Text = string.Join(" ", LenChosenOne);
-            Console.WriteLine(TheChosenOne);
 
+            foreach (char c in TheChosenOne)
+            {
+                charList.Add(c);
+            }
+            Console.WriteLine("Original String: " + TheChosenOne);
+            Console.WriteLine("List of Characters: " + string.Join(" ", charList));
+            LettersUsed.Text = "";
         }
 
         public Form1()
@@ -81,14 +90,22 @@ namespace Les2AO
         {
             bool continueLoop = true;
             string guessZaLettah = GuessedLetter.Text;
+
+            bool alreadyOwned = guessedLettersTotal.Contains(guessZaLettah);
+            bool InAlph = alphabet.Contains(guessZaLettah);
+
             for (int j = 0; j <= guessedLettersTotal.Length; j++)
             {
-                if (continueLoop && guessedLettersTotal[j] != guessZaLettah && guessZaLettah.Length == 1 && guessedLettersTotal[j] == " ")
+                if (continueLoop && !alreadyOwned && InAlph && guessedLettersTotal[j] == " ")
                 {
                     continueLoop = false;
+                    if (true) { } 
+
                     guessedLettersTotal[j] = guessZaLettah;
                 }
             }
+
+            
             LettersUsed.Text = string.Join(" ", guessedLettersTotal);
             Console.WriteLine(string.Join(" + ", guessedLettersTotal));
         }
