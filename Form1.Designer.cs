@@ -29,35 +29,40 @@
         private void InitializeComponent()
         {
             this.Hangman = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.GuessedLetter = new System.Windows.Forms.TextBox();
+            this.LettersUsed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Hangman)).BeginInit();
             this.SuspendLayout();
             // 
             // Hangman
             // 
-            this.Hangman.Location = new System.Drawing.Point(196, 43);
+            this.Hangman.Location = new System.Drawing.Point(147, 35);
+            this.Hangman.Margin = new System.Windows.Forms.Padding(2);
             this.Hangman.Name = "Hangman";
-            this.Hangman.Size = new System.Drawing.Size(404, 314);
+            this.Hangman.Size = new System.Drawing.Size(303, 255);
             this.Hangman.TabIndex = 0;
             this.Hangman.TabStop = false;
             // 
-            // button1
+            // Reset
             // 
-            this.button1.Location = new System.Drawing.Point(102, 179);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Reset.Location = new System.Drawing.Point(76, 145);
+            this.Reset.Margin = new System.Windows.Forms.Padding(2);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(56, 19);
+            this.Reset.TabIndex = 1;
+            this.Reset.Text = "Reset";
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(619, 179);
+            this.button2.Location = new System.Drawing.Point(464, 145);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(56, 19);
             this.button2.TabIndex = 2;
             this.button2.Text = ">";
             this.button2.UseVisualStyleBackColor = true;
@@ -66,22 +71,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(370, 24);
+            this.label1.Location = new System.Drawing.Point(278, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // GuessedLetter
+            // 
+            this.GuessedLetter.Location = new System.Drawing.Point(292, 391);
+            this.GuessedLetter.Name = "GuessedLetter";
+            this.GuessedLetter.Size = new System.Drawing.Size(100, 20);
+            this.GuessedLetter.TabIndex = 4;
+            // 
+            // LettersUsed
+            // 
+            this.LettersUsed.AutoSize = true;
+            this.LettersUsed.Location = new System.Drawing.Point(312, 341);
+            this.LettersUsed.Name = "LettersUsed";
+            this.LettersUsed.Size = new System.Drawing.Size(35, 13);
+            this.LettersUsed.TabIndex = 5;
+            this.LettersUsed.Text = "label2";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1417, 736);
+            this.Controls.Add(this.LettersUsed);
+            this.Controls.Add(this.GuessedLetter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Reset);
             this.Controls.Add(this.Hangman);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -94,9 +118,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox Hangman;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox GuessedLetter;
+        private System.Windows.Forms.Label LettersUsed;
     }
 }
 
