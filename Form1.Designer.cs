@@ -30,7 +30,6 @@
         {
             this.Hangman = new System.Windows.Forms.PictureBox();
             this.Reset = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.GuessedLetter = new System.Windows.Forms.TextBox();
             this.LettersUsed = new System.Windows.Forms.Label();
@@ -57,17 +56,6 @@
             this.Reset.UseVisualStyleBackColor = true;
             this.Reset.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(464, 145);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 2;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -84,6 +72,7 @@
             this.GuessedLetter.Name = "GuessedLetter";
             this.GuessedLetter.Size = new System.Drawing.Size(100, 20);
             this.GuessedLetter.TabIndex = 4;
+            this.GuessedLetter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GuessedLetter_KeyDown);
             // 
             // LettersUsed
             // 
@@ -102,7 +91,6 @@
             this.Controls.Add(this.LettersUsed);
             this.Controls.Add(this.GuessedLetter);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.Hangman);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -119,7 +107,6 @@
 
         private System.Windows.Forms.PictureBox Hangman;
         private System.Windows.Forms.Button Reset;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox GuessedLetter;
         private System.Windows.Forms.Label LettersUsed;
